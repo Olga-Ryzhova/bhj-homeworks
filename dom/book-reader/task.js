@@ -35,19 +35,23 @@ colorText.forEach((item) => {
         colorText.forEach(f => f.classList.remove('color_active'));
         item.classList.add('color_active');
 
-        book.classList.remove('text_color_black', 'text_color_gray', 'text_color_whitesmoke');
+        book.classList.remove('book_color-black', 'book_color-gray', 'book_color-whitesmoke');
 
-        if (colorsText === 'black') {
-            book.classList.add('text_color_black'); 
-        }; 
+    // Такой метод рабочий, но кода много
+        // if (colorsText === 'black') {
+        //     book.classList.add('book_color-black'); 
+        // }; 
         
-        if (colorsText === 'gray') {
-            book.classList.add('text_color_gray'); 
-        }; 
+        // if (colorsText === 'gray') {
+        //     book.classList.add('book_color-gray'); 
+        // }; 
 
-        if (colorsText === 'whitesmoke') {
-            book.classList.add('text_color_whitesmoke'); 
-        }; 
+        // if (colorsText === 'whitesmoke') {
+        //     book.classList.add('book_color-whitesmoke'); 
+        // }; 
+        
+    // Тоже код рабочий, но кода меньше
+        book.classList.add(`book_color-${colorsText}`); 
     });
 
 });
@@ -64,19 +68,23 @@ color.forEach((item) => {
         item.classList.add('color_active');
 
         
-        book.classList.remove('bg_color_black', 'bg_color_gray', 'bg_color_white');
+        book.classList.remove('book_bg-black', 'book_bg-gray', 'book_bg-white');
 
-        if (colors === 'black') {
-            book.classList.add('bg_color_black'); 
-        }; 
+    // Такой метод рабочий, но кода много
+        // if (colors === 'black') {
+        //     book.classList.add('book_bg-black'); 
+        // }; 
 
-        if (colors === 'gray') {
-            book.classList.add('bg_color_gray'); 
-        }; 
+        // if (colors === 'gray') {
+        //     book.classList.add('book_bg-gray'); 
+        // }; 
 
-        if (colors === 'white') {
-            book.classList.add('bg_color_white'); 
-        };
+        // if (colors === 'white') {
+        //     book.classList.add('book_bg-white'); 
+        // };
+
+    // Тоже код рабочий, но кода меньше
+        book.classList.add(`book_bg-${colors}`);
     });
 });
 

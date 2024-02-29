@@ -5,6 +5,12 @@ const userId = document.getElementById('user_id');
 
 signin.classList.add('signin_active');
 
+const welcomes = (user) => {
+    signin.classList.remove('signin_active');
+    welcome.classList.add('welcome_active');
+    welcome.textContent += user;    
+}
+
 form.addEventListener('submit', (event) => {
     event.preventDefault();
 
@@ -19,9 +25,7 @@ form.addEventListener('submit', (event) => {
         if (user.success === false) {
             alert('Неверный логин/пароль');
         } else if (user.success === true) {
-            signin.classList.remove('signin_active');
-            welcome.classList.add('welcome_active');
-            welcome.textContent += user.user_id;    
+            welcomes(user); 
         }           
     })
    
@@ -38,13 +42,12 @@ window.addEventListener('load', () => {
     if (user === 'undefined') {
         welcome.classList.remove('welcome_active');
     } else if (user) {
-        signin.classList.remove('signin_active');
-        welcome.classList.add('welcome_active');
-        welcome.textContent += user;    
-    } else {
-        return;
-    }
+        welcomes(user);
+    } 
 });
+
+
+
 
 
  
